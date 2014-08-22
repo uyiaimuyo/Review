@@ -14,36 +14,28 @@ public class MergeSort {
         if (a.length == 1)
             return a;
 
-        int[] final_array = new int[a.length];
-        int[] a_fh = sort(Arrays.copyOfRange(a,0,a.length/2));
-        int[] a_sh = sort(Arrays.copyOfRange(a,a.length/2,a.length));
+        int []b = sort(Arrays.copyOfRange(a, 0, a.length/2));
+        int []c = sort(Arrays.copyOfRange(a, a.length/2, a.length));
+        int [] d = new int[a.length];
+
         int j=0, k=0;
-        for (int i=0; i < final_array.length; i++) {
-            if (a_fh[k] < a_sh[j]) {
-                final_array[i] = a_fh[k];
-                if (k == (a_fh.length-1)) {
-                    final_array = concat(final_array, i+1, a_sh, j);
-                    break;
-                }
+        for (int i =0; i<a.length; i++) {
+            if (j == b.length) {
+                d[i] = c[k];
                 k++;
-            } else {
-                final_array[i] = a_sh[j];
-                if  (j == (a_sh.length-1)) {
-                    final_array = concat(final_array,i+1, a_fh, k);
-                    break;
-                }
+            } else if (k == c.length) {
+                d[i] = b[j];
                 j++;
+            } else if (b[j] <= c[k]) {
+                d[i] = b[j];
+                j++;
+            } else {
+                d[i] = c[k];
+                k++;
             }
         }
-        return final_array;
+        return d;
     }
 
-    private static int[] concat(int[] final_array, int start_index, int[] a2, int a2_start_index) {
-        int j = a2_start_index;
-        for (int i=start_index;i< final_array.length ;i++ ) {
-            final_array[i] = a2[j];
-            j++;
-        }
-        return final_array;
-    }
+
 }

@@ -81,7 +81,7 @@ public class Sorting {
         while(true) {
             while (a[++i] < p) // ensure all #ers on left are less than p
                 if (i == hi) break;
-            while (p < a[--j]) // all #ers on right are less than p
+            while (p < a[--j]) // all #ers on right are greater than p
                 if (j == lo) break;
             if (i>=j) break; // we're done if pointers have crossed
 
