@@ -17,10 +17,12 @@ public class Bag <Item> implements Iterable<Item> {
 
     private int size;
     private Node<Item> root;
+    private boolean found;
 
     public Bag() {
         size = 0;
         root = null;
+        found = false;
     }
 
     public void add(Item item) {
@@ -30,6 +32,35 @@ public class Bag <Item> implements Iterable<Item> {
         size++;
     }
 
+    public Item remove(Item item) {
+        if (root == null) throw new RuntimeException("cannot delete");
+        if (root.item.equals(item)) {
+            root = root.next;
+            size--;
+            return item;
+        }
+        Node<Item> currentNode = root;
+
+        while(currentNode.next != null) {
+            if (currentNode.next.item.equals(item)) {
+                currentNode.next = currentNode.next.next;
+                size--;
+                return item;
+            }
+            currentNode = currentNode.next;
+        }
+        return null;
+    }
+
+    public void setFound() {
+        found = true;
+    }
+
+    public boolean isFound() {
+        return found;
+    }
+
+    public Item root() { return root.item; }
     public boolean isEmpty() {
         return size == 0;
     }
