@@ -84,10 +84,8 @@ public class PriorityQueueHeapImpl <Item extends Comparable<Item>> {
 
     public static void main(String[] args) {
         String[] strings = { "it", "was", "the", "best", "of", "times", "it", "was", "the", "worst" };
-
         PriorityQueueHeapImpl<String> pq = new PriorityQueueHeapImpl<String>(9);
         for (int i = 0; i < strings.length; i++) pq.insert(i, strings[i]);
-
         for (int i=0;i<strings.length; i++) {
             System.out.println(i + " " + strings[i]);
         }

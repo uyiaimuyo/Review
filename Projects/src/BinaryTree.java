@@ -1,3 +1,4 @@
+
 /**
  * Created by Aysar on 8/25/2014.
  */
@@ -101,6 +102,7 @@ public class BinaryTree <Key extends Comparable<Key>, Value> {
             Node<Key,Value> p = predecessor(current.key);
             current.key = p.key;
             remove(p);
+
         }
     }
 
