@@ -1,4 +1,4 @@
-class Solution {
+public class MissingInteger {
     public int solution(int[] A) {
         
         int[] c = new int[A.length+1];

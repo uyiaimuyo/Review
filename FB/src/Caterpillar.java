@@ -1,7 +1,7 @@
 
 public class Caterpillar {
 
-  public int find_s(int[] A, int s) {
+  public boolean find_s(int[] A, int s) {
     int front = 0;
     int total = 0;
     
@@ -11,7 +11,7 @@ public class Caterpillar {
         front++;
       }
       if (total == s)
-        return true
+        return true;
       total -= A[back];
     }
     return false;

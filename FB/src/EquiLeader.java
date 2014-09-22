@@ -4,7 +4,7 @@ import java.util.*;
 // you can use System.out.println for debugging purposes, e.g.
 // System.out.println("this is a debug message");
 
-class Solution {
+public class EquiLeader{
     public int solution(int[] A) {
         
         int size = 0;

@@ -4,7 +4,7 @@
 // you can use System.out.println for debugging purposes, e.g.
 // System.out.println("this is a debug message");
 
-class Solution {
+public class GenomicRangeQuery{
     public int[] solution(String S, int[] P, int[] Q) {
         // write your code in Java SE 8
         
