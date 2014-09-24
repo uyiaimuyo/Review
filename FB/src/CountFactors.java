@@ -1,4 +1,4 @@
-class CountFactors {
+public class CountFactors {
     public int solution(int N) {
         if (N == 1)
             return 1;
