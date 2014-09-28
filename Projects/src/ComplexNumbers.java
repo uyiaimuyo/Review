@@ -30,11 +30,12 @@ public class ComplexNumbers {
 
     public static void main(String args[]) {
         Scanner in = new Scanner(System.in);
-        while (true){
+        while (in.hasNext()){
             System.out.println("Enter the first complex # (a + bi): ");
             String c1 = in.next();
             System.out.println("Enter the second complex # (a + bi): ");
             String c2 = in.next();
+
 
             System.out.println("Enter operation (+ - * /): ");
             char o = in.next().charAt(0);
