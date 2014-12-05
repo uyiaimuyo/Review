@@ -3,7 +3,15 @@ Review
 
 Fun, experiments, challenges, revisits, reviews of old algorithms, etc.
 
-There are 2 modules:
+There are acouple modules:
+
+##FB
+
+This contains my solutions codility problems.
+
+##LeetCode
+
+This contains my solutions to the leetcode.com online judge.
 
 ##Projects
 
