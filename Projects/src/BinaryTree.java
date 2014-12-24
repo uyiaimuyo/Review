@@ -111,11 +111,6 @@ public class BinaryTree <Key extends Comparable<Key>, Value> {
         return 1 + Math.max(height(node.left), height(node.right));
     }
 
-    public String output(Node<Key,Value> node) {
-        if (node == null) return "";
-        return output(node.left) + ", " + node.key + ", " + output(node.right);
-    }
-
     public Node<Key,Value> predecessor(Key key) {
         Node<Key,Value> node = search(key);
         if (node == null) return null;
@@ -157,6 +152,7 @@ public class BinaryTree <Key extends Comparable<Key>, Value> {
         return root;
     }
 
+    // the node that precisely i nodes are smaller
     public Node<Key,Value> select(Node<Key,Value> node, int i) {
         if (node == null) return null;
         if (node.left != null) {
@@ -166,33 +162,64 @@ public class BinaryTree <Key extends Comparable<Key>, Value> {
                 return select(node.left, i);
             }
         }
-            if (i == 1) {
-                return root;
-            } else {
-                return select(node.right, i - node.left.size - 1);
-            }
+        if (i == 1) {
+            return root;
+        } else {
+            return select(node.right, i - node.left.size - 1);
+        }
+    }
+
+    public void printPreorder(Node<Key,Value> node){
+        // root, left, right
+        System.out.println(node.key);
+        if (node.left != null)
+            printPreorder(node.left);
+        if (node.right != null)
+            printPreorder(node.right);
+    }
+
+    public void printInorder(Node<Key,Value> node) {
+        // left, root, right
+        if (node.left != null)
+            printInorder(node.left);
+        System.out.println(node.key);
+        if (node.right != null)
+            printInorder(node.right);
+    }
+
+    public void printPostorder(Node<Key,Value> node) {
+        // left, right, root
+        if (node.left != null)
+            printPostorder(node.left);
+        if (node.right != null)
+            printPostorder(node.right);
+        System.out.println(node.key);
     }
 
     public static void main(String args[]){
         BinaryTree<Integer, Integer> bst = new BinaryTree<Integer, Integer>();
         bst.insert(3);
+        bst.insert(2);
         bst.insert(1);
         bst.insert(5);
-        bst.insert(2);
         bst.insert(4);
-        bst.insert(26);
-        bst.insert(99);
-        bst.insert(19);
-        bst.insert(100);
-        bst.remove(bst.search(99));
-        bst.remove(bst.search(3));
-        System.out.println(bst.output(bst.root));
+        //bst.remove(bst.search(99));
+        //bst.remove(bst.search(3));
         System.out.println("Height: "+bst.height(bst.root));
         System.out.println("Size: "+bst.size(bst.root));
         System.out.println("Min: "+bst.min());
         System.out.println("Max: "+bst.max());
         System.out.println("Predecessor to root: "+bst.predecessor(bst.root.key).key);
-        System.out.println("Select: "+bst.select(bst.root, 3).key);
+//        System.out.println("Select: "+bst.select(bst.root, 2).key);
+
+        System.out.println("---Preordered");
+        bst.printPreorder(bst.root);
+
+        System.out.println("---Inordered");
+        bst.printInorder(bst.root);
+
+        System.out.println("---Postordered");
+        bst.printPostorder(bst.root);
     }
 
 }

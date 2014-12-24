@@ -1,0 +1,106 @@
+f2c9f134
+
+implement a binary expression tree
+sln: given: infix 3 + 5 * 2, postfix: 3 5 2 * +
+use postorder traversal of btree where operators are internal nodes and operands are leaves
+
+2 linked lists share at least 1 common node. Find the first common node. (intersection)
+sln: 1) Get count of the nodes in first list, let count be c1.
+     2) Get count of the nodes in second list, let count be c2.
+     3) Get the difference of counts d = abs(c1 – c2)
+     4) Now traverse the bigger list from the first node till d nodes so that from here onwards both the lists have equal no of nodes.
+     5) Then we can traverse both the lists in parallel till we come across a common node. (Note that getting a common node is done by comparing the address of the nodes)
+
+---
+
+Given an InOrder traversal and a PreOrder traversal of a binary tree, rebuild the tree
+Q2. Given the inorder and preorder traversals of a Binary Tree, output the postorder traversal of it.
+for eg:
+input:
+Inorder: 7, 8, 4, 1, 6, 2, 5
+Preorder: 1, 4, 7, 8, 2, 6, 5
+output: Postorder: 8, 7, 4, 6, 5, 2, 1
+
+sln: iterate over preorder list, where each element is our root node, to find is left children,
+find all those elements to the left of it in the inorder list, its right children are all those
+to the right of it.  Recursively do this.
+
+the tree’s root always coincides with the first element in preorder traversal.
+
+---
+Write a program to compress text (being as syntactically correct as possible in a language of your
+choice) by encoding runs of repeated characters:
+e.g. aaaaaabbbcc becomes a6b3c2
+
+---
+
+how do you detect a cycle in a singly-linked list
+
+Finding a path in a maze which is represented by a grid of characters.
+
+Reverse the linked-list and check for edge cases
+sln: iterate over list, while exchange prev to next and as you are iterating your curr goes to prev
+
+reversing words in a sentence in-place
+sln: Reverse the entire string, then reverse the letters of each individual word.
+
+Write a function that converts a positive integer to its representation in the English language (for example, Two-Thousand-Forty-Four)
+
+Design an app similar to whatsApp.
+
+Given a matrix of numbers. You start at left top corner and stop at right bottom corner. You can only move right or move down. Maximize the minimum number in the path.
+
+String rotation
+soln: check if s2 is a substring of s1 concanatenated with s1
+
+Removing vowels from a String
+sln: str = str.replaceAll("[AEIOUaeiou]", "");
+
+Remove comments from a code.
+Deep copy linked list.
+Pair anagrams together.
+Find most occurring integer from infinite stream of integers.
+Bit wise parity check.
+
+write an algorithm to calculate the edit distance between two strings
+
+Find kth largest element in 2 sorted arrays.
+
+Reverse the bit of a given integer.
+
+level order tree traversal
+/*Function to print level order traversal of tree*/
+printLevelorder(tree)
+for d = 1 to height(tree)
+   printGivenLevel(tree, d);
+
+/*Function to print all nodes at a given level*/
+printGivenLevel(tree, level)
+if tree is NULL then return;
+if level is 1, then
+    print(tree->data);
+else if level greater than 1, then
+    printGivenLevel(tree->left, level-1);
+    printGivenLevel(tree->right, level-1);
+
+reverse level-order-tree-traversal
+
+Given a sorted array of zeros and ones, find the number of zeros in the array A, in logn time
+
+Given a number n, the number of open paranthesis find number of all possible valid pattern
+ of pairs of pranthesis. eg. n=2 (()) , ()()
+
+Given a tree find shortest path between any two given nodes.
+
+Path Sum and Path Sum II from leetcode
+
+Convert a given tree to its Sum Tree
+
+Q1. Given a float number 7.64, convert it into the string WITHOUT using any inbuilt function/library.
+ for eg:
+ input
+ float no.: 7.64
+ output
+ string: 7.64
+
+ soln: String result = "" + f;
