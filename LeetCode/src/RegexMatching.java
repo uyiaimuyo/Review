@@ -7,7 +7,7 @@
  The matching should cover the entire input string (not partial).
 
  The function prototype should be:
- bool isMatch(const char *s, const char *p)
+ bool isMatch(const char *queue, const char *p)
  Some examples:
  isMatch("aa","a") → false
  isMatch("aa","aa") → true

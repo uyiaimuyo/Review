@@ -3,10 +3,10 @@ import java.util.Set;
 
 /**
  * Created by Aysar on 11/15/2014.
- * Given a string s and a dictionary of words dict, determine if s can be segmented
+ * Given a string queue and a dictionary of words dict, determine if queue can be segmented
  * into a space-separated sequence of one or more dictionary words.
  For example, given
- s = "leetcode",
+ queue = "leetcode",
  dict = ["leet", "code"].
  Return true because "leetcode" can be segmented as "leet code".
  */

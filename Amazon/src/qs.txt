@@ -1,5 +1,3 @@
-f2c9f134
-
 implement a binary expression tree
 sln: given: infix 3 + 5 * 2, postfix: 3 5 2 * +
 use postorder traversal of btree where operators are internal nodes and operands are leaves
