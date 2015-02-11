@@ -6,10 +6,10 @@ import java.util.Scanner;
  * Fibonacci Sequence - Enter a number and have the program generate the
  * Fibonacci sequence to that number or to the Nth number.
  *
- * Recursive 3 liner
+ * Recursive, complexity is 2^n
  */
 public class FibonnacciSeq {
-    private static int f(int n) {
+    private static int f(Integer n) {
         if (n == 2 || n == 1)
             return 1;
         return f(n-1) + f(n-2);
