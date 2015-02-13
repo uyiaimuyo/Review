@@ -1,0 +1,38 @@
+1. Write a method to find the number of employees in each department
+select count(*) from employees e group by e.department_id
+
+2. What are the different types of joins? Please explain how they differ and why certain types are better in certain situations
+Joins are used to combine the results of 2 tables.
+inner join -> get intersection between a and b
+select * from users u join posts p on u.id = p.user_id
+
+outer join -> matches on matching col of a and b, includes non matched records
+-> left  -> returns a and intersection
+-> right -> returns b and intersection
+-> full -> returns a, b and intersection
+
+3. What is denormalization? Explain the pros and cons
+Denormalization is the idea of increasing data redundancy for large scale databases whereby limiting the amount
+of joins between tables due to their costliness.
+
+pro: faster queries on single tables, data is available in more tables
+con: complex queries that involve multiple tables are costly, indexing is costling, larger less clean/OO tables
+
+4. Draw an entity-relationship diagram for a database with companies, people, and pro- fessionals (people who work for companies)
+
+COMPANIES, company has many PEOPLE
+
+PEOPLE composed of people and PROFESSIONALS
+profesionals belong to 1 company
+
+5. Imagine a simple database storing information for students’ grades Design what this database might look like, and provide a SQL query to return a list of the honor roll students (top 10%), sorted by their grade point average
+
+Grades
+id, student_id, course_id, grade
+1, 23, 34, 90
+1, 23, 35, 78
+
+
+select name, avg_grade from (select top 10 percent avg(grade) from grades group by student_id order by avg_grade desc)
+join Students on Students.id = Grades.student_id
+
