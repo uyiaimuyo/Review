@@ -3,10 +3,10 @@
  * Problem: Please implement a function which gets the minimal number of coins, whose value
  * is v1, v2, …, vn, to make change for an amount of money with value t. Any coin with value
  * vi may duplicate for any times to make change.
-
- For example, the minimal number of coins to make change for 15 out of a set of coins with
- value 1, 3, 9, 10 is 3. We can choose two coins with value 3 and a coin with value 9. The
- number of coins for other choices should be greater than 3.
+ *
+ * For example, the minimal number of coins to make change for 15 out of a set of coins with
+ * value 1, 3, 9, 10 is 3. We can choose two coins with value 3 and a coin with value 9. The
+ * number of coins for other choices should be greater than 3.
  */
 public class MinimalCoinChange {
 
