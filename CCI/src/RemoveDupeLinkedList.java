@@ -6,7 +6,7 @@
 // check if element is part of unique part of list
 // if unique: last unique element pter.next goes to it
 // if not unqiue: do nothing
-[1,2,3,4,5,6]
+// [1,2,3,4,5,6]
 
 // o(n*k), where n is size of orig list, k is # of unique elements
 public class RemoveDupeLinkedList {
